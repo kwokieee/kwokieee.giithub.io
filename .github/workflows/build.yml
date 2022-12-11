@@ -6,24 +6,24 @@ on:
 
 jobs:
   build:
-  name: Build
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
-      with:
-        ref: main
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
-    - name: Install and build
-      run: yarn install; yarn build;
-    - name: Upload production-ready build files
-      uses: actions/upload-artifact@v2
-      with:
-        name: production-files
-        path: ./dist
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install and build
+        run: yarn install; yarn build;
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./dist
 
   deploy:
     name: Deploy
