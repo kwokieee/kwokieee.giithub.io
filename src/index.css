@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Neue Montreal";
-    src: url("/fonts/NeueMontreal-Regular.otf");
-  }
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans-Regular.ttf");
+}

@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Neue Montreal', ...defaultTheme.fontFamily.sans],
+        'sans': ['Open Sans', ...defaultTheme.fontFamily.sans],
       },
     },
   },
