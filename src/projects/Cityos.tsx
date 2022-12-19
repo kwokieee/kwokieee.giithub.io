@@ -1,7 +1,12 @@
 import { OrbitControls, Html, useProgress } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { AirbitatModel } from "../components/models/Airbitat";
+import { AirbitatModel } from "../components/models/raw/Airbitat";
+import Airbitat from "../components/models/processed/Airbitat";
+import EVCharger from "../components/models/processed/EVCharger";
+import SchindlerLift from "../components/models/processed/SchindlerLift";
+import STEngAMK from "../components/models/processed/STEngAMK";
+import STEngJE from "../components/models/processed/STEngJE";
 import { Icon } from '@iconify/react';
 import Carousel from "../components/Carousel";
 
@@ -35,6 +40,9 @@ function Cityos() {
       <p className="text-left">In the DevOps team, I created an automated help desk to provide a smoother onboarding process for new employees and administrators, and assisted in deploying Keycloak as part of the department's cloud migration efforts.</p>
       <p className="text-left">I was also tasked with using 3D modelling software like Blender to create a to-scale model of some of the company's office buildings, as well as model certain assets to be monitored by the cityOS application (e.g. Elevators, EV chargers, smart air-cooling units)</p>
       <div className="w-10/12 h-[500px] self-center bg-slate-100 rounded-lg my-4">
+        <Carousel slides={[<Airbitat />, <EVCharger />, <SchindlerLift />, <STEngAMK />, <STEngJE />]} />
+      </div>
+      {/* <div className="w-10/12 h-[500px] self-center bg-slate-100 rounded-lg my-4">
         <Canvas camera={
           {
             position: [8,5,8]
@@ -48,7 +56,7 @@ function Cityos() {
             <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
           </Suspense>
         </Canvas>
-      </div>
+      </div> */}
       <p className="text-left">In addition, I also assisted the development team in bug fixes, data preparation, as well as developing the "Preventive Maintenance" feature with a group of overseas developers from China.</p>
       <p className="text-left">The work was tough, but it was my first taste of developing a real world product, and I was blessed to have such friendly and patient teammates to guide me through my journey.</p>
     </div>

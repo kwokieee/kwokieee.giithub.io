@@ -23,3 +23,4 @@ export const heroData = {
 export const cityosVideoUrl = 'https://www.youtube.com/watch?v=J7uF4DWtZ-U&ab_channel=STEngineering'
   
 export type SectionId = typeof SectionId[keyof typeof SectionId];
+
