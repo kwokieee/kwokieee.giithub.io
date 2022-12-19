@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import { Icon } from '@iconify/react';
 
-
 interface ModalProps {
   handleClose: VoidFunction;
   show: boolean;

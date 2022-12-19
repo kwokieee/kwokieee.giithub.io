@@ -25,8 +25,8 @@ type GLTFResult = GLTF & {
 export function AirbitatModel(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/models/Airbitat.glb') as unknown as GLTFResult
   return (
-    <group {...props} dispose={null} scale={0.5}>
-      <group position={[-2.5, 1.5, 2.5]} scale={[2.5, 1, 2.5]}>
+    <group {...props} dispose={null} scale={1}>
+      <group position={[-2.5, -2, 2.5]} scale={[2.5, 1, 2.5]}>
         <mesh geometry={nodes.Cube070.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Cube070_1.geometry} material={materials['Light Grey']} />
         <mesh geometry={nodes.Cube070_2.geometry} material={materials.Metal} />
