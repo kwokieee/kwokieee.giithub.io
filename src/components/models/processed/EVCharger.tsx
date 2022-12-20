@@ -20,7 +20,7 @@ function EVCharger() {
         <spotLight intensity={1} angle={0.1} penumbra={1} position={[0, 80, 0]} castShadow />
         <spotLight intensity={1} angle={0.1} penumbra={1} position={[0, -50, 0]} castShadow />
         <EVChargerModel />
-        <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
+        <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} autoRotate />
       </Suspense>
     </Canvas>
   )
