@@ -14,8 +14,8 @@ function Carousel({ slides = [] }: CarouselProps) {
 
   return (
     <div className="relative w-full h-full">
-      <Icon icon="material-symbols:arrow-circle-right-rounded" onClick={nextSlide} className="absolute right-0 top-[50%] z-20" width={50} height={50} />
-      <Icon icon="material-symbols:arrow-circle-left-rounded" onClick={prevSlide} className="absolute left-0 top-[50%] z-20" width={50} height={50} />
+      <Icon icon="material-symbols:arrow-circle-right-rounded" onClick={nextSlide} className="absolute right-0 top-[50%] z-20 cursor-pointer" width={50} height={50} />
+      <Icon icon="material-symbols:arrow-circle-left-rounded" onClick={prevSlide} className="absolute left-0 top-[50%] z-20 cursor-pointer" width={50} height={50} />
       {slides.map((slide, index) => {
         return (
           <div key={index} className={index === currentSlide ? 'w-full h-full' : 'hidden w-full h-full'}>
