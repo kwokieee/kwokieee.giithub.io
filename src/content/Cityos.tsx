@@ -1,7 +1,3 @@
-import { OrbitControls, Html, useProgress } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
-import { AirbitatModel } from "../components/models/raw/Airbitat";
 import Airbitat from "../components/models/processed/Airbitat";
 import EVCharger from "../components/models/processed/EVCharger";
 import SchindlerLift from "../components/models/processed/SchindlerLift";
@@ -9,11 +5,6 @@ import STEngAMK from "../components/models/processed/STEngAMK";
 import STEngJE from "../components/models/processed/STEngJE";
 import { Icon } from '@iconify/react';
 import Carousel from "../components/Carousel";
-
-function Loader() {
-  const { progress } = useProgress()
-  return <Html center>{progress} % loaded</Html>
-}
 
 function Cityos() {
   return (
