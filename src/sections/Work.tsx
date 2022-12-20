@@ -1,7 +1,7 @@
 import Card from "../components/Card"
 import Section from "../components/layouts/Section"
 import { SectionId } from "../data/data"
-import Cityos from "../projects/Cityos"
+import Cityos from "../content/Cityos"
 
 function Work() {
   return (
