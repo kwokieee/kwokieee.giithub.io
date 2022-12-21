@@ -9,7 +9,10 @@ import Carousel from "../components/Carousel";
 function Cityos() {
   return (
     <div className="flex flex-col justify-center items-start py-4 px-8">
-      <p className="text-3xl self-center">cityOS</p>
+      <p className="text-3xl self-center mb-4">cityOS</p>
+      <div className="w-full sm:w-10/12 self-center">
+        <img src="/images/cityOS.jpg" className="rounded-md object-scale-down object-center" />
+      </div>
       <div className="py-4">
         <span className="flex">
           <span className="mr-2 flex items-center">
@@ -21,7 +24,7 @@ function Cityos() {
           <span className="mr-2 flex items-center">
             <Icon icon="uil:calender" />
           </span>
-          <p className="inline-block align-text-top">Jan - Jul 2022 (7 months)</p>
+          <p>Jan - Jul 2022 (7 months)</p>
         </span>
       </div>
       <p className="text-left mb-4 text-sm sm:text-base">In the first half of 2022, I had the opportunity to work with ST Engineering under the Digital Facilities Solutions department, which was in charge of developing the AGIL Smart City Operating System, or cityOS for short.</p>
