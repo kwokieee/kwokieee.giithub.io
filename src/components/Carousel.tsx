@@ -9,7 +9,6 @@ function Carousel({ slides = [] }: CarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const length = slides.length;
   const nextSlide = () => setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide + 1);
-  // const nextSlide = () => console.log("clicked")
   const prevSlide = () => setCurrentSlide(currentSlide === 0 ? length - 1 : currentSlide - 1);
 
   return (
