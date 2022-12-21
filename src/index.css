@@ -6,3 +6,7 @@
   font-family: "Open Sans";
   src: url("/fonts/OpenSans-Regular.ttf");
 }
+
+.logo {
+  @apply h-24 p-6
+}
