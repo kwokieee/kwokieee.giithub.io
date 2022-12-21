@@ -4,18 +4,14 @@ import { SectionId } from "../data/data"
 function Hero() {
   return (
     <Section noPadding sectionId={SectionId.Hero}>
-      <div className="flex flex-col justify-center items-center">
-        <div className="py-10">
-          <img src="/images/profile-pic.jpg" className="h-64 w-64 rounded-full" />
+      <div className="relative">
+        <img src="/images/hero-photo.png" className="object-cover lg:w-screen lg:h-screen" />
+        <div className="bg-[#393434] rounded-md absolute right-4 sm:right-[16%] lg:right-[16%] top-1/4 py-2 px-4 lg:py-8 lg:px-16 flex flex-col items-center">
+          <p className="text-[#eeeeee] text-3xl sm:text-4xl lg:text-6xl font-extrabold">Hi, I'm Bryan.</p>
+          <div className="bg-[#eeeeee] h-0.5 w-5/6 my-1 sm:my-2 lg:my-6 rounded-sm" />
+          <p className="text-[#eeeeee] sm:text-2xl lg:text-4xl">I learn, I design,</p>
+          <p className="text-[#eeeeee] sm:text-2xl lg:text-4xl">and I build.</p>
         </div>
-        <h1 className="text-6xl pt-5">Hi, I'm Bryan!</h1>
-        <p className="text-3xl pt-5">I’m a full stack engineer that loves trying new things!</p>
-        <p className="pt-5">
-          I’m currently a penultimate year computer science undergraduate from the National University of Singapore.
-        </p>
-        <p className="pt-2 max-w-4xl">
-          I believe that experience is the best teacher, and throughout my university life, I have been diving into anything and everything to discover what I love and dislike, as well as what I’m good and bad at, to help me grow as a person.
-        </p>
       </div>
     </Section>
   )
