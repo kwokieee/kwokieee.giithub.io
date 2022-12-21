@@ -7,9 +7,9 @@ import Seatseer from "../content/Seatseer"
 
 function Projects() {
   return (
-    <Section noPadding sectionId={SectionId.Projects}>
+    <Section sectionId={SectionId.Projects}>
     <div className="flex flex-col justify-center items-center">
-      <h1 className="text-5xl my-10">Projects</h1>
+      <h1 className="text-4xl font-extrabold mb-10">Projects</h1>
       <div className="grid grid-cols-1 gap-8">
         <Card header="ClimbJios" body="An open source progressive web app for Singapore’s climbing community." imagePath="/images/climbjios.png" imageDescription="ClimbJios">
           <Climbjios />

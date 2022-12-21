@@ -7,9 +7,9 @@ import IWMF from "../content/IWMF"
 
 function Work() {
   return (
-    <Section noPadding sectionId={SectionId.Work}>
+    <Section sectionId={SectionId.Work}>
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-5xl my-10">Work</h1>
+        <h1 className="text-4xl font-extrabold mb-10">Work</h1>
         <div className="grid grid-cols-1 gap-8">
           <Card header="cityOS" body="Large scale software for building and facility management at a city level." imagePath="/images/cityOS.jpg" imageDescription="cityOS">
             <Cityos />

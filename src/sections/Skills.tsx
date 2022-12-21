@@ -3,10 +3,10 @@ import { SectionId } from "../data/data"
 
 function Skills() {
   return (
-    <Section noPadding sectionId={SectionId.Skills}>
+    <Section sectionId={SectionId.Skills}>
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-5xl pt-5">Skills</h1>
-        <p className="text-3xl my-5">I’m proficient in</p>
+        <h1 className="text-4xl font-extrabold">Skills</h1>
+        <p className="text-2xl my-5">I’m proficient in</p>
         <span className="border-t w-full max-w-xl" />
         <div className="grid grid-cols-3 gap-4 w-full max-w-xl">
           <div className="flex flex-col justify-center items-center">
@@ -47,7 +47,7 @@ function Skills() {
           </div>
         </div>
 
-        <p className="text-3xl mt-10 mb-5">I have experience with</p>
+        <p className="text-2xl mt-10 mb-5">I have experience with</p>
         <span className="border-t w-full max-w-xl" />
         <div className="grid grid-cols-3 gap-4 w-full max-w-xl">
           <div className="flex flex-col justify-center items-center">
@@ -60,7 +60,7 @@ function Skills() {
           </div>
           <div className="flex flex-col justify-center items-center">
             <img src="/logos/ros.svg" className="logo" alt="ROS logo" />
-            <p>Robot Operating System</p>
+            <p>ROS</p>
           </div>
           <div className="flex flex-col justify-center items-center">
             <img src="/logos/mongodb.svg" className="logo" alt="MongoDB logo" />
