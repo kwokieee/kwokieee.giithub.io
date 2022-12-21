@@ -55,7 +55,7 @@ function Skills() {
             <p>Blender</p>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <img src="/logos/keycloak_logo.png" className="logo" alt="Keycloak logo" />
+            <img src="/logos/keycloak.svg" className="logo" alt="Keycloak logo" />
             <p>Keycloak</p>
           </div>
           <div className="flex flex-col justify-center items-center">
