@@ -5,7 +5,7 @@ function Skills() {
   return (
     <Section sectionId={SectionId.Skills}>
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-4xl font-extrabold">Skills</h1>
+        <h1 className="text-4xl font-extrabold">My Skills</h1>
         <p className="text-2xl my-5">I’m proficient in</p>
         <span className="border-t w-full max-w-xl" />
         <div className="grid grid-cols-3 gap-4 w-full max-w-xl">

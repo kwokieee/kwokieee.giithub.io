@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 function TA() {
   return (
     <div className="flex flex-col justify-center items-start py-4 px-8">
-      <p className="text-3xl self-center mb-4">Undergraduate Teaching Assistant</p>
+      <p className="text-3xl self-center mb-4 font-extrabold">Undergraduate Teaching Assistant</p>
       <div className="w-full sm:w-10/12 self-center">
         <img src="/images/source-academy.png" className="rounded-md object-scale-down object-center" />
       </div>

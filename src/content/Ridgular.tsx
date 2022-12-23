@@ -3,8 +3,8 @@ import { Icon } from '@iconify/react';
 function Ridgular() {
   return (
     <div className="flex flex-col justify-center items-start py-4 px-8">
-      <div className="w-full sm:w-10/12 self-center">
-        <img src="/images/ridgular.png" className="rounded-md object-scale-down object-center" />
+      <div className="w-full sm:w-10/12 self-center flex justify-center">
+        <img src="/images/ridgular.png" className="rounded-md object-scale-down object-center max-w-sm" />
       </div>
       <div className="py-4">
         <span className="flex">
