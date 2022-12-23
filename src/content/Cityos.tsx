@@ -9,7 +9,7 @@ import Carousel from "../components/Carousel";
 function Cityos() {
   return (
     <div className="flex flex-col justify-center items-start py-4 px-8">
-      <p className="text-3xl self-center mb-4">cityOS</p>
+      <p className="text-3xl self-center mb-4 font-extrabold">cityOS</p>
       <div className="w-full sm:w-10/12 self-center">
         <img src="/images/cityOS.jpg" className="rounded-md object-scale-down object-center" />
       </div>
@@ -33,9 +33,9 @@ function Cityos() {
         <iframe className="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/J7uF4DWtZ-U" frameBorder="0" title="AGIL® Smart City Operating System" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
       </div>
       <p className="text-left mb-4 text-sm sm:text-base">In the infrastructure/DevOps team, I created an automated help desk to provide a smoother onboarding process for new employees and administrators, and assisted in deploying Keycloak as part of the department's cloud migration efforts.</p>
-      <p className="text-left text-sm sm:text-base">I was also tasked with using 3D modelling software like Blender to create a to-scale model of some of the company's office buildings, as well as model certain assets to be monitored by the cityOS application (e.g. Elevators, EV chargers, smart air-cooling units)</p>
-      <div className="w-full sm:w-10/12 h-[300px] sm:h-[500px] self-center bg-slate-100 rounded-lg my-4">
-        <Carousel slides={[<Airbitat />, <EVCharger />, <SchindlerLift />, <STEngAMK />, <STEngJE />]} />
+      <p className="text-left text-sm sm:text-base">I was also tasked with using 3D modelling software like Blender to create a to-scale model of some of the company's office buildings, as well as model certain assets to be monitored by the cityOS application (e.g. Elevators, EV chargers, smart air-cooling units).</p>
+      <div className="w-full sm:w-10/12 h-[300px] sm:h-[500px] self-center rounded-lg my-4">
+        <Carousel slides={[<Airbitat />, <EVCharger />, <SchindlerLift />, <STEngAMK />, <STEngJE />]} slideClasses="bg-slate-100" />
       </div>
       <p className="text-left mb-4 text-sm sm:text-base">In addition, I also assisted the development team in bug fixes, data preparation, as well as developing the "Preventive Maintenance" feature with a group of overseas developers from China.</p>
       <div className="w-full sm:w-10/12 self-center">
