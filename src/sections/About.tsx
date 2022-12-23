@@ -5,7 +5,7 @@ function About() {
   return (
     <Section sectionId={SectionId.About}>
       <div className="flex flex-col justify-center items-center">
-      <h1 className="text-4xl font-extrabold">About me</h1>
+      <h1 className="text-4xl font-extrabold">About Me</h1>
       <p className="pt-6 pb-4">
         I’m currently a penultimate year computer science undergraduate from the National University of Singapore.
       </p>

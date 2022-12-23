@@ -9,6 +9,34 @@ export const SectionId = {
     Footer: 'footer',
 };
 
+export const sections = [
+    {
+        sectionId: "hero",
+        sectionTitle: "Bryan Kwok",
+        isInNavBar: false
+    },
+    {
+        sectionId: "about",
+        sectionTitle: "About",
+        isInNavBar: true
+    },
+    {
+        sectionId: "skills",
+        sectionTitle: "Skills",
+        isInNavBar: true
+    },
+    {
+        sectionId: "work",
+        sectionTitle: "Work",
+        isInNavBar: true
+    },
+    {
+        sectionId: "footer",
+        sectionTitle: "Footer",
+        isInNavBar: false
+    }
+]
+
 /**
  * Hero data
  */

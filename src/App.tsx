@@ -8,7 +8,7 @@ import Footer from './sections/Footer'
 function App() {
   return (
     <div className="text-center bg-[#eeeeee]">
-      {/* <NavBar /> */}
+      <NavBar />
       <Hero />
       <About />
       <Skills />
