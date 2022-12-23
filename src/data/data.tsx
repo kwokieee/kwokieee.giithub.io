@@ -6,7 +6,6 @@ export const SectionId = {
     About: 'about',
     Skills: 'skills',
     Work: 'work',
-    Projects: 'projects',
     Footer: 'footer',
 };
 
