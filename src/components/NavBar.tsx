@@ -29,7 +29,7 @@ function NavBar() {
   }
   
   return (
-    <nav className="fixed w-screen p-4 flex items-center z-10 bg-black shadow-md">
+    <nav className="sticky top-0 w-screen p-4 flex items-center z-10 bg-black shadow-md">
       <div className="ml-1">
         <NavLink navLinkId={sections[0].sectionTitle} scrollToId={sections[0].sectionId} />
       </div>
