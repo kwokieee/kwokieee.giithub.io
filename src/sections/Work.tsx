@@ -12,7 +12,11 @@ function Work() {
   return (
     <Section sectionId={SectionId.Work}>
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-4xl font-extrabold mb-10">My Work</h1>
+        <div className="flex items-center w-full mb-16">
+          <span className="bg-[#393434] h-1 w-4 rounded-sm grow" />
+          <h1 className="text-4xl font-extrabold px-2">My Work</h1>
+          <span className="bg-[#393434] h-1 w-4 rounded-sm grow" />
+        </div>
         <div className="grid grid-cols-1 gap-8">
           <Card header="cityOS" body="Large scale software for building and facility management at a city level." imagePath="/images/cityOS.jpg" imageDescription="cityOS">
             <Cityos />
