@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import Carousel from '../components/Carousel';
 
 function Climbjios() {
   return (
@@ -8,8 +9,16 @@ function Climbjios() {
         <h1 className="text-lg sm:text-4xl font-extrabold px-2">ClimbJios</h1>
         <span className="bg-[#393434] h-1 w-4 rounded-sm grow" />
       </div>
-      <div className="w-full sm:w-10/12 self-center">
+      {/* <div className="w-full sm:w-10/12 self-center">
         <img src="/images/climbjios.png" className="object-scale-down object-center" />
+      </div> */}
+      <div className="w-full sm:w-11/12 self-center">
+        <Carousel
+          slides={[
+            <img src="/images/climbjios.png" className="object-contain object-center" />,
+            <img src="/images/climbjios-steps-poster.png" className="object-contain object-center" />
+          ]}
+        />
       </div>
       <div className="py-4">
         <span className="flex">
