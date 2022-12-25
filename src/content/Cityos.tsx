@@ -38,10 +38,7 @@ function Cityos() {
         <Carousel slides={[<Airbitat />, <EVCharger />, <SchindlerLift />, <STEngAMK />, <STEngJE />]} slideClasses="bg-slate-100" />
       </div>
       <p className="text-left mb-4 text-sm sm:text-base">In addition, I also assisted the development team in bug fixes, data preparation, as well as developing the "Preventive Maintenance" feature with a group of overseas developers from China.</p>
-      <div className="w-full sm:w-10/12 self-center">
-        <img src="/images/steng-team.jpg" className="rounded-md object-scale-down object-center" />
-      </div>
-      <p className="text-left my-4 text-sm sm:text-base">The work was tough, but it was my first taste of developing a real world product, and I was blessed to have such friendly and patient teammates to guide me through my journey.</p>
+      <p className="text-left mb-4 text-sm sm:text-base">The work was tough, but it was my first taste of developing a real world product, and I was blessed to have such friendly and patient teammates to guide me through my journey.</p>
     </div>
   )
 }

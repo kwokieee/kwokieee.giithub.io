@@ -21,10 +21,7 @@ function Ridgular() {
         </span>
       </div>
       <p className="text-left mb-4 text-sm sm:text-base">Ridgular is a progressive web app (PWA), developed as a project for the module CS3216 Software Product Engineering for Digital Markets.</p>
-      <div className="w-full sm:w-10/12 self-center">
-        <img src="/images/ridgular-landing.png" className="rounded-md object-scale-down object-center" />
-      </div>
-      <p className="text-left my-4 text-sm sm:text-base">Built using React, Ridgular is a ride hailing platform for riders who have regular ride schedules, focusing on long term contracts between riders and drivers.</p>
+      <p className="text-left mb-4 text-sm sm:text-base">Built using React, Ridgular is a ride hailing platform for riders who have regular ride schedules, focusing on long term contracts between riders and drivers.</p>
     </div>
   )
 }
