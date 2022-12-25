@@ -19,8 +19,6 @@ type LargeCaptionObject = SmallCaptionObject & {
   onClick: VoidFunction;
 }
 
-
-
 // Carousel has 3 different designs in this website
 function Carousel({ containerClasses = "", slideClasses = "", slides = [], smallCaptions = [], largeCaptions = [] }: CarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -77,24 +75,47 @@ function Carousel({ containerClasses = "", slideClasses = "", slides = [], small
     );
   }
   
+  // A carousel with slides and a caption
   if (smallCaptions.length !== 0) {
     return (
-      <div className="lg:h-auto flex flex-col lg:flex-row">
-        <div className="">
-          <img src="/images/hero-photo.png" className="object-cover" />
-        </div>
-        <div className="bg-[#515151] p-6 flex flex-col justify-center items-center h-full lg:h-auto w-full">
-          <p className="text-[#eeeeee] text-4xl lg:text-6xl font-extrabold">Hi, I'm Bryan.</p>
-          <div className="bg-[#eeeeee] h-0.5 w-5/6 max-w-xl my-3 sm:my-2 lg:my-6 rounded-sm" />
-          <p className="text-[#eeeeee] sm:text-2xl lg:text-3xl xl:text-4xl">I learn, I design,</p>
-          <p className="text-[#eeeeee] sm:text-2xl lg:text-3xl xl:text-4xl">and I build things.</p>
+      <div className={"relative w-full h-full flex flex-col " + containerClasses}>
+        {/* Slide */}
+        {slides.map((slide, index) => {
+          return (
+            <div key={index} className={(index === currentSlide ? "aspect-square " : "hidden ") + slideClasses}>
+              {index === currentSlide && slide}
+            </div>
+          );
+        })}
+        {/* Caption */}
+        <div className="bg-[#515151] h-1/2 flex flex-col">
+          <div className="flex justify-center items-center pt-2">
+            {slides.map((slide, index) => {
+              return (
+                <Icon key={index} icon="bi:dash" width={35} color={(index === currentSlide ? "#000000" : "#d4d4d4")} />
+              )
+            })}
+          </div>
+          <div className="h-full flex justify-between items-center w-full pb-2">
+            <div className="flex flex-col justify-center items-center">
+              <Icon icon="ion:chevron-back-circle" onClick={prevSlide} className="pl-1 cursor-pointer w-6 h-6 sm:w-10 sm:h-10" color="#808080" />
+            </div>
+            <div className="px-1">
+              {smallCaptions.map((caption, index) => (<p className={index === currentSlide ? "text-sm text-[#eeeeee] italic" : "hidden"}>{caption.caption}</p>))}
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <Icon icon="ion:chevron-forward-circle" onClick={nextSlide} className="pr-1 cursor-pointer w-6 h-6 sm:w-10 sm:h-10" color="#808080" />
+            </div>
+          </div>
         </div>
       </div>
-    );
+    )
   }
 
+  // A normal carousel
   return (
     <div className={"relative w-full h-full flex flex-col " + containerClasses}>
+      <Icon icon="ion:chevron-back-circle" onClick={prevSlide} className="absolute top-1/2 left-2 z-20 cursor-pointer w-8 h-8 lg:w-10 lg:h-10" color="#808080" />
       {slides.map((slide, index) => {
         return (
           <div key={index} className={(index === currentSlide ? "grow " : "hidden ") + slideClasses}>
@@ -103,20 +124,15 @@ function Carousel({ containerClasses = "", slideClasses = "", slides = [], small
         );
       })}
       <div className="mt-2 flex">
-        <div className="flex">
-          <Icon icon="material-symbols:arrow-back-ios-new-rounded" onClick={prevSlide} className="z-20 cursor-pointer w-6 h-6 lg:w-10 lg:h-10" color="#808080" />
-        </div>
         <div className="flex grow justify-center items-center">
           {slides.map((slide, index) => {
             return (
-              <Icon key={index} icon="carbon:dot-mark" className="max-w-8 max-h-8" color={(index === currentSlide ? "#808080" : "#d9d9d9")} />
+              <Icon key={index} icon="bi:dash" width={35} color={(index === currentSlide ? "#000000" : "#d4d4d4")} />
             )
           })}
         </div>
-        <div className="flex">
-          <Icon icon="material-symbols:arrow-forward-ios-rounded" onClick={nextSlide} className="z-20 cursor-pointer w-6 h-6 lg:w-10 lg:h-10" color="#808080" />
-        </div>
       </div>
+      <Icon icon="ion:chevron-forward-circle" onClick={nextSlide} className="absolute top-1/2 right-2 z-20 cursor-pointer w-6 h-6 lg:w-10 lg:h-10" color="#808080" />
     </div>
   )
 }
