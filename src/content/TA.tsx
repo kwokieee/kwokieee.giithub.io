@@ -9,7 +9,7 @@ function TA() {
         <span className="bg-[#393434] h-1 w-4 rounded-sm grow" />
       </div>
       <div className="w-full sm:w-10/12 self-center">
-        <img src="/images/source-academy.png" className="rounded-md object-scale-down object-center" />
+        <img src="/images/source-academy.png" className="object-scale-down object-center" />
       </div>
       <div className="py-4">
         <span className="flex">

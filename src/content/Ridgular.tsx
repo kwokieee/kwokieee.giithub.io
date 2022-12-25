@@ -9,7 +9,7 @@ function Ridgular() {
         <span className="bg-[#393434] h-1 w-4 rounded-sm grow" />
       </div>
       <div className="w-full sm:w-10/12 self-center flex justify-center">
-        <img src="/images/ridgular.png" className="rounded-md object-scale-down object-center max-w-sm" />
+        <img src="/images/ridgular.png" className="object-scale-down object-center max-w-sm" />
       </div>
       <div className="py-4">
         <span className="flex">

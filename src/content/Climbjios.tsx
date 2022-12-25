@@ -9,7 +9,7 @@ function Climbjios() {
         <span className="bg-[#393434] h-1 w-4 rounded-sm grow" />
       </div>
       <div className="w-full sm:w-10/12 self-center">
-        <img src="/images/climbjios.png" className="rounded-md object-scale-down object-center" />
+        <img src="/images/climbjios.png" className="object-scale-down object-center" />
       </div>
       <div className="py-4">
         <span className="flex">
