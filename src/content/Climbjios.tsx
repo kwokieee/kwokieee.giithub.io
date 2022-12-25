@@ -3,6 +3,11 @@ import { Icon } from '@iconify/react';
 function Climbjios() {
   return (
     <div className="flex flex-col justify-center items-start py-4 px-8">
+      <div className="flex items-center w-full mb-4 px-8 sm:px-16">
+        <span className="bg-[#393434] h-1 w-4 rounded-sm grow" />
+        <h1 className="text-lg sm:text-4xl font-extrabold px-2">ClimbJios</h1>
+        <span className="bg-[#393434] h-1 w-4 rounded-sm grow" />
+      </div>
       <div className="w-full sm:w-10/12 self-center">
         <img src="/images/climbjios.png" className="rounded-md object-scale-down object-center" />
       </div>
@@ -11,19 +16,19 @@ function Climbjios() {
           <span className="mr-2 flex items-center">
             <Icon icon="mdi:user" style={{ display: "inline-block" }} />
           </span>
-          <p>Co-founder</p>
+          <p className="text-xs sm:text-base">Co-founder</p>
         </span>
         <span className="flex">
           <span className="mr-2 flex items-center">
             <Icon icon="uil:calender" />
           </span>
-          <p>Sep 2022 - Present</p>
+          <p className="text-xs sm:text-base">Sep 2022 - Present</p>
         </span>
         <span className="flex">
           <span className="mr-2 flex items-center">
             <Icon icon="mdi:link-variant" />
           </span>
-          <a href="https://www.climbjios.com" className="text-emerald-500" target="_blank">climbjios.com</a>
+          <a href="https://www.climbjios.com" className="text-emerald-500 text-xs sm:text-base" target="_blank">climbjios.com</a>
         </span>
       </div>
       <p className="text-left mb-4 text-sm sm:text-base">ClimbJios started as the final project for a module I was taking, CS3216 Software Product Engineering for Digital Markets. Built for the Singaporean climbing community in the short span of 6 weeks, we managed to get more than 643 sign-ups and more than 200 posts made on our app in less than a week of public release.</p>

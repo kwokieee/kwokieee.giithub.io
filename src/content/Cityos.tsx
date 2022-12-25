@@ -9,22 +9,31 @@ import Carousel from "../components/Carousel";
 function Cityos() {
   return (
     <div className="flex flex-col justify-center items-start py-4 px-8">
-      <p className="text-3xl self-center mb-4 font-extrabold">cityOS</p>
-      <div className="w-full sm:w-10/12 self-center">
-        <img src="/images/cityOS.jpg" className="rounded-md object-scale-down object-center" />
+      <div className="flex items-center w-full mb-4 px-8 sm:px-16">
+        <span className="bg-[#393434] h-1 w-4 rounded-sm grow" />
+        <h1 className="text-lg sm:text-4xl font-extrabold px-2">ST Engineering</h1>
+        <span className="bg-[#393434] h-1 w-4 rounded-sm grow" />
+      </div>
+      <div className="w-full sm:w-11/12 max-w-4xl self-center">
+        <Carousel
+          slides={[
+            <img src="/images/st-engineering.png" className="object-contain" />,
+            <img src="/images/cityOS.jpg" className="object-contain" />
+          ]}
+        />
       </div>
       <div className="py-4">
         <span className="flex">
           <span className="mr-2 flex items-center">
             <Icon icon="mdi:user" style={{ display: "inline-block" }} />
           </span>
-          <p>Intern</p>
+          <p className="text-xs sm:text-base">Intern</p>
         </span>
         <span className="flex">
           <span className="mr-2 flex items-center">
             <Icon icon="uil:calender" />
           </span>
-          <p>Jan - Jul 2022 (7 months)</p>
+          <p className="text-xs sm:text-base">Jan - Jul 2022 (7 months)</p>
         </span>
       </div>
       <p className="text-left mb-4 text-sm sm:text-base">In the first half of 2022, I had the opportunity to work with ST Engineering under the Digital Facilities Solutions department, which was in charge of developing the AGIL Smart City Operating System, or cityOS for short.</p>
@@ -35,7 +44,6 @@ function Cityos() {
       <p className="text-left mb-4 text-sm sm:text-base">In the infrastructure/DevOps team, I created an automated help desk to provide a smoother onboarding process for new employees and administrators, and assisted in deploying Keycloak as part of the department's cloud migration efforts.</p>
       <p className="text-left mb-4 text-sm sm:text-base">I was also tasked with using 3D modelling software like Blender to create a to-scale model of some of the company's office buildings, as well as model certain assets to be monitored by the cityOS application (e.g. Elevators, EV chargers, smart air-cooling units).</p>
       <div className="w-full sm:w-10/12 h-[300px] sm:h-[500px] self-center mb-4">
-        {/* <Carousel slides={[<Airbitat />, <EVCharger />, <SchindlerLift />, <STEngAMK />, <STEngJE />]} slideClasses="bg-slate-100" /> */}
         <Carousel
           slides={[
             <Airbitat />,
