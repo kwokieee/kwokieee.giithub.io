@@ -114,15 +114,18 @@ function Carousel({ containerClasses = "", slideClasses = "", slides = [], small
 
   // A normal carousel
   return (
-    <div className={"relative w-full h-full flex flex-col " + containerClasses}>
-      <Icon icon="ion:chevron-back-circle" onClick={prevSlide} className="absolute top-1/2 left-2 z-20 cursor-pointer w-8 h-8 lg:w-10 lg:h-10" color="#808080" />
-      {slides.map((slide, index) => {
-        return (
-          <div key={index} className={(index === currentSlide ? "grow " : "hidden ") + slideClasses}>
-            {index === currentSlide && slide}
-          </div>
-        );
-      })}
+    <div className={"relative w-full h-full flex flex-col" + containerClasses}>
+      <div className="relative">
+        <Icon icon="ion:chevron-back-circle" onClick={prevSlide} className="absolute top-1/2 left-2 z-20 cursor-pointer w-6 h-6 lg:w-10 lg:h-10" color="#808080" />
+        {slides.map((slide, index) => {
+          return (
+            <div key={index} className={(index === currentSlide ? "flex justify-center grow " : "hidden ") + slideClasses}>
+              {index === currentSlide && slide}
+            </div>
+          );
+        })}
+        <Icon icon="ion:chevron-forward-circle" onClick={nextSlide} className="absolute top-1/2 right-2 z-20 cursor-pointer w-6 h-6 lg:w-10 lg:h-10" color="#808080" />
+      </div>
       <div className="mt-2 flex">
         <div className="flex grow justify-center items-center">
           {slides.map((slide, index) => {
@@ -132,7 +135,6 @@ function Carousel({ containerClasses = "", slideClasses = "", slides = [], small
           })}
         </div>
       </div>
-      <Icon icon="ion:chevron-forward-circle" onClick={nextSlide} className="absolute top-1/2 right-2 z-20 cursor-pointer w-6 h-6 lg:w-10 lg:h-10" color="#808080" />
     </div>
   )
 }
