@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactHTMLElement, ReactNode, useRef, useState } from "react";
 import { Icon } from '@iconify/react';
 
 interface CarouselProps {
@@ -21,10 +21,34 @@ type LargeCaptionObject = SmallCaptionObject & {
 
 // Carousel has 3 different designs in this website
 function Carousel({ containerClasses = "", slideClasses = "", slides = [], smallCaptions = [], largeCaptions = [] }: CarouselProps) {
+  const carousel = useRef<HTMLInputElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const length = slides.length;
   const nextSlide = () => setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide + 1);
   const prevSlide = () => setCurrentSlide(currentSlide === 0 ? length - 1 : currentSlide - 1);
+
+  const incrementCarousel = (delta: number) => {
+    if (!carousel.current) return;
+
+    const width = carousel.current.offsetWidth;
+
+    if (currentSlide + delta >= slides.length) {
+      setCurrentSlide(0);
+      carousel.current.scrollTo(0, 0);
+      return;
+    } else if (currentSlide + delta < 0) {
+      setCurrentSlide(slides.length - 1);
+      console.log(width, carousel.current.scrollLeft);
+      carousel.current.scrollTo(width * slides.length - 1, 0);
+      return;
+    }
+
+    carousel.current.scrollTo(
+      carousel.current.scrollLeft + width * delta,
+      0
+    );
+    setCurrentSlide(c => c + delta);
+  };
 
   // A carousel with slides, a caption, and a button
   if (largeCaptions.length !== 0) {
@@ -101,7 +125,7 @@ function Carousel({ containerClasses = "", slideClasses = "", slides = [], small
               <Icon icon="ion:chevron-back-circle" onClick={prevSlide} className="pl-1 cursor-pointer w-6 h-6 sm:w-10 sm:h-10" color="#808080" />
             </div>
             <div className="px-1">
-              {smallCaptions.map((caption, index) => (<p className={index === currentSlide ? "text-sm text-[#eeeeee] italic" : "hidden"}>{caption.caption}</p>))}
+              {smallCaptions.map((caption, index) => (<p key={index} className={index === currentSlide ? "text-sm text-[#eeeeee] italic" : "hidden"}>{caption.caption}</p>))}
             </div>
             <div className="flex flex-col justify-center items-center">
               <Icon icon="ion:chevron-forward-circle" onClick={nextSlide} className="pr-1 cursor-pointer w-6 h-6 sm:w-10 sm:h-10" color="#808080" />
@@ -114,17 +138,19 @@ function Carousel({ containerClasses = "", slideClasses = "", slides = [], small
 
   // A normal carousel
   return (
-    <div className={"relative w-full h-full flex flex-col" + containerClasses}>
+    <div className={"relative w-full h-full flex flex-col " + containerClasses}>
       <div className="relative flex justify-center">
-        <Icon icon="ion:chevron-back-circle" onClick={prevSlide} className="absolute top-1/2 left-2 z-20 cursor-pointer w-6 h-6 lg:w-10 lg:h-10" color="#808080" />
+        <Icon icon="ion:chevron-back-circle" onClick={() => incrementCarousel(-1)} className="absolute top-1/2 left-2 z-20 cursor-pointer w-6 h-6 lg:w-10 lg:h-10" color="#808080" />
+        <div className="flex snap-mandatory scroll-smooth" ref={carousel}>
         {slides.map((slide, index) => {
           return (
-            <div key={index} className={(index === currentSlide ? "flex justify-center aspect-square max-h-[600px] " : "hidden ") + slideClasses}>
+            <div key={index} className={"flex h-[60vh] flex-col justify-center items-center flex-[1 0 100%] snap-start transition-all ease-in-out duration-500 " + (index === currentSlide ? "opacity-100 " : "opacity-0")}>
               {index === currentSlide && slide}
             </div>
           );
         })}
-        <Icon icon="ion:chevron-forward-circle" onClick={nextSlide} className="absolute top-1/2 right-2 z-20 cursor-pointer w-6 h-6 lg:w-10 lg:h-10" color="#808080" />
+        </div>
+        <Icon icon="ion:chevron-forward-circle" onClick={() => incrementCarousel(1)} className="absolute top-1/2 right-2 z-20 cursor-pointer w-6 h-6 lg:w-10 lg:h-10" color="#808080" />
       </div>
       <div className="mt-2 flex">
         <div className="flex grow justify-center items-center">
