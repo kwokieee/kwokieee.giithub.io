@@ -21,11 +21,6 @@ export const sections = [
         isInNavBar: true
     },
     {
-        sectionId: "skills",
-        sectionTitle: "Skills",
-        isInNavBar: true
-    },
-    {
         sectionId: "work",
         sectionTitle: "Work",
         isInNavBar: true
