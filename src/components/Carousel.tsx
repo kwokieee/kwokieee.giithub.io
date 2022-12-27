@@ -106,7 +106,7 @@ function Carousel({ containerClasses = "", slideClasses = "", slides = [], small
         {/* Slide */}
         {slides.map((slide, index) => {
           return (
-            <div key={index} className={(index === currentSlide ? "aspect-square " : "hidden ") + slideClasses}>
+            <div key={index} className={(index === currentSlide ? " " : "hidden ") + slideClasses}>
               {index === currentSlide && slide}
             </div>
           );
