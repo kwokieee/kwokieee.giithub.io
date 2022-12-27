@@ -19,6 +19,16 @@ function Work() {
   const [isRidgularModalOpen, setRidgularModalOpen] = useState(false);
   const [isSeatseerModalOpen, setSeatseerModalOpen] = useState(false);
 
+  const enableBackgroundScroll = () => {
+    document.body.style.overflow = 'unset';
+  }
+
+  const disableBackgroundScroll = () => {
+    if (typeof window != 'undefined' && window.document) {
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
   return (
     <Section noPadding sectionId={SectionId.Work}>
       <div className="flex flex-col justify-center items-center">
@@ -41,57 +51,105 @@ function Work() {
               caption: "ST Engineering",
               subCaption: "My work on cityOS, a platform for facility management.",
               buttonText: "Find out more",
-              onClick: () => setSTEngModalOpen(true)
+              onClick: () => {
+                setSTEngModalOpen(true);
+                disableBackgroundScroll();
+              }
             },
             {
               caption: "ClimbJios",
               subCaption: "An open source progressive web app for Singapore's climbing community.",
               buttonText: "Find out more",
-              onClick: () => setClimbjiosModalOpen(true)
+              onClick: () => {
+                setClimbjiosModalOpen(true)
+                disableBackgroundScroll();
+              }
             },
             {
               caption: "Undergraduate Teaching Assistant",
               subCaption: "My experience teaching the CS1101S Programming Methodology module.",
               buttonText: "Find out more",
-              onClick: () => setTAModalOpen(true)
+              onClick: () => {
+                setTAModalOpen(true);
+                disableBackgroundScroll();
+              }
             },
             {
               caption: "NUS Rover Team",
               subCaption: "My time as a member and a project manager of the NUS Rover Team.",
               buttonText: "Find out more",
-              onClick: () => setRoverModalOpen(true)
+              onClick: () => {
+                setRoverModalOpen(true);
+                disableBackgroundScroll();
+              }
             },
             {
               caption: "Ridgular",
               subCaption: "A progressive web app for ride hailing for those who have regular ride booking schedules.",
               buttonText: "Find out more",
-              onClick: () => setRidgularModalOpen(true)
+              onClick: () => {
+                setRidgularModalOpen(true);
+                disableBackgroundScroll();
+              }
             },
             {
               caption: "SeatSeer",
               subCaption: "A mobile app for checking seat availability around NUS.",
               buttonText: "Find out more",
-              onClick: () => setSeatseerModalOpen(true)
+              onClick: () => {
+                setSeatseerModalOpen(true);
+                disableBackgroundScroll();
+              }
             },
           ]}
         />
-        <Modal handleClose={() => setSTEngModalOpen(false)} show={isSTEngModalOpen}>
-          <Cityos />
+        <Modal
+          handleClose={() => {
+            setSTEngModalOpen(false);
+            enableBackgroundScroll();
+          }}
+          show={isSTEngModalOpen}>
+            <Cityos />
         </Modal>
-        <Modal handleClose={() => setClimbjiosModalOpen(false)} show={isClimbjiosModalOpen}>
-          <Climbjios />
+        <Modal
+          handleClose={() => {
+            setClimbjiosModalOpen(false);
+            enableBackgroundScroll();
+          }}
+          show={isClimbjiosModalOpen}>
+            <Climbjios />
         </Modal>
-        <Modal handleClose={() => setTAModalOpen(false)} show={isTAModalOpen}>
-          <TA />
+        <Modal
+          handleClose={() => {
+            setTAModalOpen(false);
+            enableBackgroundScroll();
+          }}
+          show={isTAModalOpen}>
+            <TA />
         </Modal>
-        <Modal handleClose={() => setRoverModalOpen(false)} show={isRoverModalOpen}>
-          <Rover />
+        <Modal
+          handleClose={() => {
+            setRoverModalOpen(false);
+            enableBackgroundScroll();
+          }}
+          show={isRoverModalOpen}>
+            <Rover />
         </Modal>
-        <Modal handleClose={() => setRidgularModalOpen(false)} show={isRidgularModalOpen}>
-          <Ridgular />
+        <Modal
+          handleClose={() => {
+            setRidgularModalOpen(false);
+            enableBackgroundScroll();
+          }}
+          show={isRidgularModalOpen}>
+            <Ridgular />
         </Modal>
-        <Modal handleClose={() => setSeatseerModalOpen(false)} show={isSeatseerModalOpen}>
-          <Seatseer />
+        <Modal
+          handleClose={() => {
+            setSeatseerModalOpen(false);
+            enableBackgroundScroll();
+          }}
+          show={isSeatseerModalOpen}>
+            <Seatseer />
         </Modal>
       </div>
       {/* <div className="flex flex-col justify-center items-center">
